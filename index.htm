@@ -1,0 +1,851 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Demo</title>
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css" /> -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+
+    <div id="main">
+        <img src="car.png" id="car">
+
+        <div class="div2" id="key" style="position:relative;left:170px;top:10px;width:300px;height:50px">
+            <img src="pics/keys.png" width="70px" style="position:relative;top:0px">
+        </div>
+        <div class="div2" id="encdocs" style="position:absolute;left:100px;top:80px;width:300px;height:100px">
+            <table>
+                <thead>
+                    <tr>
+                        <td><img src="pics/docs.png" id="docs" width="70px"></td>
+                        <td>
+                            <div class="loadingarrow" style="position:relative;top:0px">
+                                <span class="fa fa-chevron-right"></span> <span class="fa fa-chevron-right"></span>
+                                <span class="fa fa-chevron-right"></span> <span class="fa fa-chevron-right"></span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                        </td>
+                        <td><img src="server.png"></td>
+                        <td>
+                            <div class="loadingarrow" style="position:relative;top:0px">
+                                <span class="fa fa-chevron-right"></span> <span class="fa fa-chevron-right"></span>
+                                <span class="fa fa-chevron-right"></span> <span class="fa fa-chevron-right"></span>
+                                <span class="fa fa-chevron-right"></span>
+                            </div>
+                        </td>
+                        <td><img src="pics/encrypted-docs.png" id="encrypted-docs" width="70px"></td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="div2" id="subscribe">
+            <div class="div1" id="subscribebox" style="position:absolute;left:50px;top:300px;width:200px;height:100px">
+                <p>User A subscribed</p>
+                <p> @ <span id="clock"></span></p>
+            </div>
+            <div class="loadingtop" style="position:absolute;left:300px;top:200px;">
+                <span class="fa fa-chevron-up"></span> <span class="fa fa-chevron-up"></span> <span
+                    class="fa fa-chevron-up"></span> <span class="fa fa-chevron-up"></span> <span
+                    class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+
+        <div class="div2" id="getsk" style="position:absolute;left:250px;top:200px;width:200px;height:100px">
+            <img src="pics/sk.png" style="width:50px" id="sk">
+        </div>
+
+        <div class="div2" id="showsk" style="position:absolute;left:390px;top:520px;width:200px;height:100px">
+            <img src="pics/sk.png" style="width:50px">
+        </div>
+
+        <div class="div1" id="envsensor" style="position:absolute;left:50px;top:500px;width:200px;height:90px">
+            <p>
+                Environment sensoring
+            </p>
+            <div class="loading" id="loading1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="div1" id="senseres" style="position:absolute;left:510px;top:400px;width:180px;height:200px">
+            <div id="txt"></div>
+        </div>
+
+        <div class="div1" id="compare" style="position:absolute;left:300px;top:380px">
+            <div id="fade-in" class="speech-bubble speech-bubble-bottom">
+                <span>Cost of performing the task </span><span> >> others to do it!</span>
+            </div>
+        </div>
+
+        <div class="div2" id="market" style="position:absolute;left:130px;top:30px;">
+            <span margin-top="5px" style="font-weight:bold">MARKET</span>
+            <div class="smarket" style="position:absolute;left:30px;top:20px;background-color:rgba(243, 179, 179, 0.5)">
+                <span margin-top="10px">1-1 market</span>
+            </div>
+            <div class="smarket"
+                style="position:absolute;left:160px;top:20px;background-color:rgba(255, 218, 125, 0.5)">
+                <span margin-top="10px">1-N market</span>
+            </div>
+            <div class="smarket"
+                style="position:absolute;left:290px;top:20px;background-color:rgba(200, 243, 179, 0.5)">
+                <span margin-top="10px">N-N market</span>
+            </div>
+        </div>
+
+        <div class="div2" id="sendtask" style="position:absolute;left:250px;top:150px;width:200px;height:100px">
+            <img src="pics/task.png" style="width:50px" id="task">
+        </div>
+
+
+        <div class="div2" id="showtask" style="position:absolute;left:200px;top:85px;">
+            <img src="pics/task.png" style="width:50px">
+        </div>
+
+        <div class="div2" id="showpeer" style="position:absolute;top:520px;">
+            <img src="pics/peer.png" style="width:200px" id="peer">
+        </div>
+
+        <div class="div1" id="ask" style="position:absolute;left:50px;top:380px">
+            <div id="fade-in" class="speech-bubble speech-bubble-bottom">
+                <span> $21?</span>
+            </div>
+        </div>
+
+        <div class="div1" id="answer" style="position:absolute;left:300px;top:380px">
+            <div id="fade-in" class="speech-bubble speech-bubble-bottom">
+                <span>OK!</span>
+            </div>
+        </div>
+
+        <div class="div2" id="handshake" style="position:absolute;left:255px;top:505px;">
+            <img src="pics/handshake.png" style="width:50px">
+        </div>
+
+        <div class="div2" id="senddocs" style="position:absolute;left:160px;top:400px;">
+            <img src="pics/encrypted-docs.png" style="width:50px" id="sendfile">
+        </div>
+
+        <div class="div2" id="complete" style="position:absolute;left:245px;top:505px;">
+            <div style="padding:10px;display: flex;justify-content: center;">
+                <div class="loader"></div>
+            </div>
+        </div>
+
+        <div class="div2" id="peerleave" style="position:absolute;top:520px;">
+            <img src="pics/peer.png" style="width:200px" id="leave">
+        </div>
+
+        <div class="div2" id="decfile" style="position:absolute;top:450px;left:280px;">
+            <img src="pics/encrypted-docs.png" style="width:50px" id="encfile">
+            <div class="loadingarrow" style="position:relative;top:-35px;left: 70px;">
+                <span class="fa fa-chevron-right"></span> <span class="fa fa-chevron-right"></span>
+                <span class="fa fa-chevron-right"></span> <span class="fa fa-chevron-right"></span>
+                <span class="fa fa-chevron-right"></span>
+            </div>
+            <img src="pics/sk.png" style="width:50px" id="skmove">
+        </div>
+        <div class="div2" id="showdecfile" style="position:absolute;top:450px;left:450px;">
+            <img src="pics/docs.png" style="width:50px">
+        </div>
+
+        <div class="confetti" id="done">
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+        </div>
+
+    </div>
+
+    <style>
+        p.samll {
+            line-height: 50%;
+        }
+
+        p.tiny {
+            line-height: 30%;
+        }
+
+        #main {
+            height: 700px;
+            width: 700px;
+            background-image: url('bg.jpg');
+            background-repeat: repeat-x;
+            background-attachment: fixed;
+            animation: bgmove 6s infinite linear;
+        }
+
+        @keyframes bgmove {
+            from {
+                background-position-x: -1400px;
+            }
+
+            to {
+                background-position-x: 0;
+            }
+        }
+
+        #car {
+            position: absolute;
+            left: 300px;
+            top: 510px;
+        }
+
+        #server {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+
+        #sk {
+            animation: skmove 2s linear 10s;
+            /* animation-delay: 0s; */
+            -webkit-animation: skmove 2s linear 10s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes skmove {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(250px);
+            }
+        }
+
+        @-webkit-keyframes skmove {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(250px);
+            }
+        }
+
+        #task {
+            animation: taskmove 2s linear 26s;
+            -webkit-animation: taskmove 2s linear 26s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes taskmove {
+            0% {
+                transform: translateY(250px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @-webkit-keyframes taskmove {
+            0% {
+                transform: translateY(250px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .div1 {
+            visibility: hidden;
+            border: 1px solid rgb(106, 121, 182);
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            /* opacity: 0.5; */
+        }
+
+        .div2 {
+            visibility: hidden;
+            /* border: 1px solid rgb(106, 121, 182);
+        background-color: rgba(255, 255, 255, 0.8); */
+            text-align: center;
+            /* opacity: 0.5; */
+        }
+
+        .loading {
+            width: 150px;
+            height: 15px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .loading span {
+            display: inline-block;
+            width: 15px;
+            height: 100%;
+            margin-right: 5px;
+            background: lightgreen;
+            -webkit-transform-origin: right bottom;
+            -webkit-animation: load 1s ease infinite;
+        }
+
+        .loading span:last-child {
+            margin-right: 0px;
+        }
+
+        @-webkit-keyframes load {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                -webkit-transform: rotate(90deg);
+            }
+        }
+
+        .loading span:nth-child(1) {
+            -webkit-animation-delay: 0.13s;
+        }
+
+        .loading span:nth-child(2) {
+            -webkit-animation-delay: 0.26s;
+        }
+
+        .loading span:nth-child(3) {
+            -webkit-animation-delay: 0.39s;
+        }
+
+        .loading span:nth-child(4) {
+            -webkit-animation-delay: 0.52s;
+        }
+
+        .loading span:nth-child(5) {
+            -webkit-animation-delay: 0.65s;
+        }
+
+
+        button {
+            background-color: #000;
+            border: .5px solid #000;
+            border-radius: 10px;
+            color: #fff;
+            padding: 8px;
+        }
+
+        /* loading */
+        .loadingarrow {
+            width: 100px;
+            height: 10px;
+            margin: 0 auto;
+            margin-top: 0px;
+        }
+
+        .loadingarrow span {
+            display: inline-block;
+            color: #1d2b55;
+            width: 10px;
+            height: 100%;
+            margin-right: 5px;
+            /* -webkit-transform-origin: right bottom; */
+            -webkit-animation: load 1.04s ease infinite;
+        }
+
+        .loadingarrow span:last-child {
+            margin-right: 0px;
+        }
+
+        @-webkit-keyframes load {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .loadingarrow span:nth-child(1) {
+            -webkit-animation-delay: 0.13s;
+        }
+
+        .loadingarrow span:nth-child(2) {
+            -webkit-animation-delay: 0.26s;
+        }
+
+        .loadingarrow span:nth-child(3) {
+            -webkit-animation-delay: 0.39s;
+        }
+
+        .loadingarrow span:nth-child(4) {
+            -webkit-animation-delay: 0.52s;
+        }
+
+        .loadingarrow span:nth-child(5) {
+            -webkit-animation-delay: 0.65s;
+        }
+
+        .loadingtop {
+            width: 10px;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 0px;
+        }
+
+        .loadingtop span {
+            display: inline-block;
+            color: #1d2b55;
+            width: 10px;
+            height: 100%;
+            margin-right: 5px;
+            -webkit-animation: load 1.04s ease infinite;
+        }
+
+        .loadingtop span:last-child {
+            margin-right: 0px;
+        }
+
+        @-webkit-keyframes load {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .loadingtop span:nth-child(5) {
+            -webkit-animation-delay: 0.13s;
+        }
+
+        .loadingtop span:nth-child(4) {
+            -webkit-animation-delay: 0.26s;
+        }
+
+        .loadingtop span:nth-child(3) {
+            -webkit-animation-delay: 0.39s;
+        }
+
+        .loadingtop span:nth-child(2) {
+            -webkit-animation-delay: 0.52s;
+        }
+
+        .loadingtop span:nth-child(1) {
+            -webkit-animation-delay: 0.65s;
+        }
+
+        .speech-bubble {
+            position: relative;
+            /* border: 1px solid rgb(106, 121, 182); */
+            background-color: rgba(255, 255, 255, 0);
+            width: 200px;
+            height: 80px;
+            line-height: 30px;
+            /* color: rgb(0, 0, 0); */
+            margin-top: 10px;
+            text-align: center;
+            /* font-family: sans-serif; */
+            animation: fade-in 5s;
+            animation-duration: 1.5s;
+            -webkit-animation: fade-in 1.5s;
+        }
+
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 15px solid rgba(255, 255, 255, 0);
+        }
+
+        .speech-bubble-bottom:after {
+            border-top-color: rgba(255, 255, 255, 0.8);
+            top: 100%;
+            left: 50%;
+            margin-left: -15px;
+        }
+
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #market {
+            width: 450px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 100px / 80px;
+            line-height: 20px;
+            /* color: rgb(0, 0, 0); */
+            /* margin-top: 10px; */
+        }
+
+        .smarket {
+            width: 120px;
+            height: 90px;
+            /* background: rgba(246, 168, 168, 0.8); */
+            border-radius: 100px / 80px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        #peer {
+            animation: peermove 2s;
+            animation-delay: 30.5s;
+            -webkit-keyframes: peermove 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes peermove {
+            from {
+                transform: translateX(-300px);
+            }
+
+            to {
+                transform: translateX(50px);
+            }
+        }
+
+        @-webkit-keyframes peermove {
+            from {
+                transform: translateY(-300px);
+            }
+
+            to {
+                transform: translateY(50px);
+            }
+        }
+
+
+        #sendfile {
+            offset-path: path('M10 80 Q 95 10 180 80');
+            offset-rotate: 0deg;
+            animation: move 2000ms linear;
+            animation-delay: 36s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes move {
+            0% {
+                offset-distance: 0%;
+            }
+
+            100% {
+                offset-distance: 100%;
+            }
+        }
+
+        .loader {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 4px solid rgba(165, 220, 134, 0.2);
+            border-left-color: #A5DC86;
+            animation: animation_collect 0.5s linear infinite;
+        }
+
+        @keyframes animation_collect {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .loader::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 6.5px;
+            border: 4px solid #A5DC86;
+            border-left-width: 0;
+            border-bottom-width: 0;
+            transform: scaleX(-1) rotate(135deg);
+            transform-origin: left top;
+            opacity: 0;
+        }
+
+        @keyframes animation_true {
+            0% {
+                opacity: 0;
+                width: 0px;
+                height: 0px;
+            }
+
+            33% {
+                opacity: 1;
+                width: 10px;
+                height: 0px;
+            }
+
+            100% {
+                opacity: 1;
+                width: 10px;
+                height: 20px;
+            }
+        }
+
+        .loader.active {
+            animation: none;
+            border-color: #A5DC86;
+        }
+
+        .loader.active::before {
+            animation: animation_true 0.2s 0.2s linear 1 both;
+        }
+
+        #leave {
+            animation: peerleave 2s;
+            animation-delay: 39s;
+            -webkit-keyframes: peerleave 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes peerleave {
+            from {
+                transform: translateX(50px);
+            }
+
+            to {
+                transform: translateX(-300px);
+            }
+        }
+
+        @-webkit-keyframes peerleave {
+            from {
+                transform: translateY(50px);
+            }
+
+            to {
+                transform: translateY(-300px);
+            }
+        }
+
+        #skmove {
+            offset-path: path('M180 30 L90 -50');
+            offset-rotate: 0deg;
+            animation: keymove 1000ms linear;
+            animation-delay: 39s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes keymove {
+            0% {
+                offset-distance: 0%;
+            }
+
+            100% {
+                offset-distance: 100%;
+            }
+        }
+
+        .confetti {
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            background: #ffd300;
+            top: 0;
+            opacity: 0;
+        }
+
+        .confetti-piece:nth-child(1) {
+            left: 7%;
+            -webkit-transform: rotate(-40deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 182ms;
+            -webkit-animation-duration: 1116ms;
+        }
+
+        .confetti-piece:nth-child(2) {
+            left: 14%;
+            -webkit-transform: rotate(4deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 161ms;
+            -webkit-animation-duration: 1076ms;
+        }
+
+        .confetti-piece:nth-child(3) {
+            left: 21%;
+            -webkit-transform: rotate(-51deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 481ms;
+            -webkit-animation-duration: 1103ms;
+        }
+
+        .confetti-piece:nth-child(4) {
+            left: 28%;
+            -webkit-transform: rotate(61deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 334ms;
+            -webkit-animation-duration: 708ms;
+        }
+
+        .confetti-piece:nth-child(5) {
+            left: 35%;
+            -webkit-transform: rotate(-52deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 302ms;
+            -webkit-animation-duration: 776ms;
+        }
+
+        .confetti-piece:nth-child(6) {
+            left: 42%;
+            -webkit-transform: rotate(38deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 180ms;
+            -webkit-animation-duration: 1168ms;
+        }
+
+        .confetti-piece:nth-child(7) {
+            left: 49%;
+            -webkit-transform: rotate(11deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 395ms;
+            -webkit-animation-duration: 1200ms;
+        }
+
+        .confetti-piece:nth-child(8) {
+            left: 56%;
+            -webkit-transform: rotate(49deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 14ms;
+            -webkit-animation-duration: 887ms;
+        }
+
+        .confetti-piece:nth-child(9) {
+            left: 63%;
+            -webkit-transform: rotate(-72deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 149ms;
+            -webkit-animation-duration: 805ms;
+        }
+
+        .confetti-piece:nth-child(10) {
+            left: 70%;
+            -webkit-transform: rotate(10deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 351ms;
+            -webkit-animation-duration: 1059ms;
+        }
+
+        .confetti-piece:nth-child(11) {
+            left: 77%;
+            -webkit-transform: rotate(4deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 307ms;
+            -webkit-animation-duration: 1132ms;
+        }
+
+        .confetti-piece:nth-child(12) {
+            left: 84%;
+            -webkit-transform: rotate(42deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 464ms;
+            -webkit-animation-duration: 776ms;
+        }
+
+        .confetti-piece:nth-child(13) {
+            left: 91%;
+            -webkit-transform: rotate(-72deg);
+            -webkit-animation: makeItRain 1000ms infinite ease-out;
+            -webkit-animation-delay: 429ms;
+            -webkit-animation-duration: 818ms;
+        }
+
+        .confetti-piece:nth-child(odd) {
+            background: #7431e8;
+        }
+
+        .confetti-piece:nth-child(even) {
+            z-index: 1;
+        }
+
+        .confetti-piece:nth-child(4n) {
+            width: 5px;
+            height: 12px;
+            -webkit-animation-duration: 2000ms;
+        }
+
+        .confetti-piece:nth-child(3n) {
+            width: 3px;
+            height: 10px;
+            -webkit-animation-duration: 2500ms;
+            -webkit-animation-delay: 1000ms;
+        }
+
+        .confetti-piece:nth-child(4n-7) {
+            background: red;
+        }
+
+        @-webkit-keyframes makeItRain {
+            from {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            to {
+                -webkit-transform: translateY(350px);
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/demo.js" type=text/javascript></script>
+</body>
+
+</html>
