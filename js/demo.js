@@ -1,5 +1,5 @@
 // setTimeout(() => {
-//     document.getElementById('sendtask').style.visibility = 'visible';
+//     document.getElementById('subscribe').style.visibility = 'visible';
 // }, 0);
 setTimeout(() => {
     document.getElementById('encdocs').style.visibility = 'visible';
@@ -94,9 +94,7 @@ setTimeout(() => {
 }, 29000);
 
 
-setTimeout(() => {  
-    document.getElementById('showpeer').style.visibility = 'visible';
-}, 31000);
+
 setTimeout(() => {  
     document.getElementById('ask').style.visibility = 'visible';
 }, 32000);
@@ -127,8 +125,7 @@ jQuery(function(){
     document.getElementById('showtask').style.visibility = 'hidden';
     document.getElementById('senddocs').style.visibility = 'hidden';
     document.getElementById('complete').style.visibility = 'hidden';
-    document.getElementById('showpeer').style.visibility = 'hidden';
-    document.getElementById('peerleave').style.visibility = 'visible';
+
  }, 39000);
 
  setTimeout(() => {
